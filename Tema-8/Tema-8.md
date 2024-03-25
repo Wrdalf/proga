@@ -131,3 +131,170 @@ class Circle(Shape):
 ### Результат:
 
 ![alt text](image-2.png)
+
+# Самостоятельная работа № 1
+
+### Самостоятельно создайте класс и его объект. Они должны отличаться от тех, что указаны в теоретическом материале и лабораторных заданиях
+
+```python
+class Course:
+    def __init__(self, name, instructor, duration):
+        self.name = name
+        self.instructor = instructor
+        self.duration = duration
+        self.students = []  # Список студентов по умолчанию пуст
+
+    def add_student(self, student_name):
+        self.students.append(student_name)
+        print(f"{student_name} has been enrolled in {self.name} course.")
+
+    def get_course_info(self):
+        info = f"Course: {self.name}\nInstructor: {self.instructor}\nDuration: {self.duration} weeks\nStudents enrolled: {', '.join(self.students)}"
+        return info
+
+# Создание объекта класса Course
+python_course = Course("Python Programming", "John Doe", 8)
+
+# Добавление студентов
+python_course.add_student("Alice")
+python_course.add_student("Bob")
+python_course.add_student("Charlie")
+
+# Вывод информации о курсе
+print(python_course.get_course_info())
+
+```
+
+### Результат
+
+![alt text](image-3.png)
+
+
+# Самостоятельная работа № 2
+
+### Самостоятельно создайте атрибуты и методы для ранее созданного класса. Они должны отличаться, от тех, что указаны в теоретическом материиале
+
+```python
+class Course:
+    def __init__(self, name, instructor, duration):
+        self.name = name
+        self.instructor = instructor
+        self.duration = duration
+        self.students = []  # Список студентов по умолчанию пуст
+
+    def add_student(self, student_name):
+        self.students.append(student_name)
+        print(f"{student_name} has been enrolled in {self.name} course.")
+
+    def get_course_info(self):
+        info = f"Course: {self.name}\nInstructor: {self.instructor}\nDuration: {self.duration} weeks\nStudents enrolled: {', '.join(self.students)}"
+        return info
+
+# Создание объекта класса Course
+python_course = Course("Python Programming", "John Doe", 8)
+
+# Добавление студентов
+python_course.add_student("Alice")
+python_course.add_student("Bob")
+python_course.add_student("Charlie")
+
+# Вывод информации о курсе
+print(python_course.get_course_info())
+```
+
+### Результат
+
+
+# самостоятельная работа № 3
+
+### Самостоятельно реализуйте наследование
+
+```python
+class OnlineCourse(Course):
+    def __init__(self, name, instructor, duration, platform):
+        super().__init__(name, instructor, duration)
+        self.platform = platform
+
+    def get_course_info(self):
+        info = super().get_course_info()
+        info += f"\nPlatform: {self.platform}"
+        return info
+
+# Создание объекта подкласса OnlineCourse
+python_online_course = OnlineCourse("Python Programming", "John Doe", 8, "Udemy")
+
+# Добавление студентов
+python_online_course.add_student("Alice")
+python_online_course.add_student("Bob")
+python_online_course.add_student("Charlie")
+
+# Вывод информации о курсе
+print(python_online_course.get_course_info())
+```
+
+# самостоятельная работа № 4
+
+### Самостоятельно реализуйте инкапсуляцию
+
+```python
+class Course:
+    def __init__(self, name, instructor, duration):
+        self._name = name
+        self._instructor = instructor
+        self._duration = duration
+        self._students = []  # Список студентов по умолчанию пуст
+
+    def add_student(self, student_name):
+        self._students.append(student_name)
+        print(f"{student_name} has been enrolled in {self._name} course.")
+
+    def get_course_info(self):
+        info = f"Course: {self._name}\nInstructor: {self._instructor}\nDuration: {self._duration} weeks\nStudents enrolled: {', '.join(self._students)}"
+        return info
+
+    # Методы для доступа к закрытым атрибутам
+    def get_name(self):
+        return self._name
+
+    def set_name(self, name):
+        self._name = name
+
+    def get_instructor(self):
+        return self._instructor
+
+    def set_instructor(self, instructor):
+        self._instructor = instructor
+
+    def get_duration(self):
+        return self._duration
+
+    def set_duration(self, duration):
+        self._duration = duration
+
+# Создание объекта класса Course
+python_course = Course("Python Programming", "John Doe", 8)
+
+# Использование методов доступа и установки для атрибутов
+print("Before modification:")
+print("Course name:", python_course.get_name())
+print("Instructor:", python_course.get_instructor())
+print("Duration:", python_course.get_duration())
+
+python_course.set_name("Advanced Python Programming")
+python_course.set_instructor("Jane Smith")
+python_course.set_duration(10)
+
+print("\nAfter modification:")
+print("Course name:", python_course.get_name())
+print("Instructor:", python_course.get_instructor())
+print("Duration:", python_course.get_duration())
+
+```
+
+# самостоятельная работа № 5
+
+### Самостоятельно реализуйте Полиморфизм
+
+```python
+
+```
